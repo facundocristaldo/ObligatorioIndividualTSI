@@ -1,0 +1,36 @@
+﻿<div class="container">
+    <h1 style=" padding-left:5%; padding-bottom:40px">Agregar Empleado</h1>
+    <div class="col-md-offset-1 col-md-10 col-sm-offset-1" style="padding-bottom:30px">
+        <h4 class="btn-link col-md-1" style="color:dodgerblue" routerLink="/employee">Listar</h4>
+    </div>
+    <div class="col-md-offset-2 col-md-8 ">
+        <div>
+
+            <div class="form-group" style="width:100%">
+                <div class="col-md-12" style="margin-top:2%">
+                    <label class="col-md-6">Nombre</label>
+                    <input [(ngModel)]="Name" class="col-md-6" style="vertical-align:central" type="text" placeholder="Nombre" name="nombre" required />
+                </div>
+                <div class="col-md-12" style="margin-top:2%">
+                    <label class="col-md-6">Fecha Comienzo</label>
+                    <input [(ngModel)]="StartDate" class="col-md-6" style="vertical-align:central" type="date" min="1950-01-01" max="2100-12-31" placeholder="Fecha Comienzo" name="Startdate" required />
+                </div>
+                <div class="col-md-12" style="margin-top:2%">
+                    <label class="col-md-6">Tipo de empleado</label>
+
+                    <select [(ngModel)]="Type" class="col-md-6 " style="vertical-align:central" name="Type">
+                        <option value="1" >PartTime</option>
+                        <option value="2" >FullTime</option>
+                    </select>
+                </div>
+                <div class="col-md-12" style="margin-top:2%">
+                    <label class="col-md-6">Paga</label>
+                    <input [(ngModel)]="Value" class="col-md-6" style="vertical-align:central" type="number" placeholder="Monto" name="Valor" id="monto" required />
+                </div>
+                <input type="button" routerLink="/employee" class="  btn btn-default pull-left" style="margin-top:10%" value="Cancelar">
+                <button type="button" (click)="addEmployee()" routerLink="/employee" class="btn btn-success pull-right" style="margin-top:10%">Agregar</button>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Obligatorio1TSI" Class="EmployeeModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-D049SN2\SQLEXPRESS02;Initial Catalog=Obligatorio1TSI;Integrated Security=True" SettingsObjectName="DataAccessLayer.Properties.Settings" SettingsPropertyName="Obligatorio1TSIConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.EmployeesTPH" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="EMP_ID" Member="EmpId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="START_DATE" Member="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TYPE_EMP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" IsDiscriminator="true" />
+      <Type Name="FullTimeEmployee" InheritanceCode="2">
+        <Column Name="SALARY" Member="Salary" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      </Type>
+      <Type Name="PartTimeEmployee" InheritanceCode="1" IsInheritanceDefault="true">
+        <Column Name="RATE" Member="HourlyRate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      </Type>
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,52 @@
+﻿<div class="container" ng-init="">
+    <h1 style=" padding-left:5%; padding-bottom:40px">Lista de Empleados</h1>
+    <div class="col-md-offset-1 col-md-11" style="padding-bottom:30px">
+        <h4 class="btn-link col-md-3" style="color:dodgerblue" routerLink="manage">Agregar Usuario</h4>
+    </div>
+    <div class="col-md-10 pull-right right">
+        <label>ID</label>
+        <input [(ngModel)]="idEmpSel" type="number" step="1" min="0" value="1" placeholder="ID" />
+        <label>Nombre</label>
+        <input [(ngModel)]="nombreEmpSel"  placeholder="Nombre" />
+        <label>Tipo de empleado</label>
+        <select [(ngModel)]="tipoEmpSel">
+            <option value="0">Todos</option>
+            <option value="2">Full Time</option>
+            <option value="1">Part Time</option>
+        </select>
+        <!--<label>Fecha Comienzo</label>
+        <input [(ngModel)]="fechaEmpSel" style="vertical-align:central" type="date" min="1950-01-01" max="2100-12-31" placeholder="Fecha Comienzo" name="Startdate" required />-->
+    <button class="btn btn-default pull-right col-md-3" (click)="cargarEmpleados()">Actualizar</button>
+    </div>
+    <div class="col-md-offset-2 col-md-12" ng-init="">
+        <div>
+            <div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <td>Delete</td>
+                            <td>ID</td>
+                            <td>Nombre</td>
+                            <td>Fecha Comienzo</td>
+                            <td>Paga</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr *ngFor="let emp of array2">
+                            <td (click)="delete(emp.Id)" class="btn btn-danger center-block glyphicon glyphicon-remove-sign"></td>
+                            <td>{{emp.Id}}</td>
+                            <td>{{emp.Name}}</td>
+                            <td>{{emp.StartDate}}</td>
+                            <td *ngIf="emp.Type==1">{{emp.HourlyRate}} por Hora</td>
+                            <td *ngIf="emp.Type==2">{{emp.Salary}} mensuales</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
