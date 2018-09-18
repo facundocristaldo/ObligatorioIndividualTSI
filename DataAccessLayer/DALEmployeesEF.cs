@@ -96,7 +96,6 @@ namespace DataAccessLayer
             {
                 list = from q in list where q.EmpId.Equals(id) select q;
             }
-            
 
             //list = (List<Model.Employee>)from q in conn.Employees where q.EmpId == 2 select q;
             foreach (Model.Employee aux in list)

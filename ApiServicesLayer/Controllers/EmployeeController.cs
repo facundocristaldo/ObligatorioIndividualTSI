@@ -24,7 +24,9 @@ namespace ApiServices.Controllers
 
             string nombre = filtros.nombreEmp;
             int id = Convert.ToInt32(filtros.idEmp);
-            DateTime date = filtros.fechaEmp;
+           
+            
+
             int type = 1;
             if (filtros.tipoEmp.Equals("1"))
             {

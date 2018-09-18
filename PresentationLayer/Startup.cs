@@ -44,7 +44,10 @@ namespace WebApplication1
             }
 
             app.UseStaticFiles();
-
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<NotiHub>("/chatHub");
+            });
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -56,10 +59,7 @@ namespace WebApplication1
                     defaults: new { controller = "Home", action = "Index" });
             });
 
-            app.UseSignalR(routes =>
-            {
-                routes.MapHub<NotiHub>("/chatHub");
-            });
+            
 
         }
     }

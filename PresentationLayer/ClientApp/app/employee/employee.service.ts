@@ -45,7 +45,7 @@ export class EmployeeService {
     }
 
     public getEmployees(idEmp: number, nombreEmp: string, tipoEmp: string, fechaEmp: Date | undefined): Observable<any> {
-        console.log("fecha empleado vacio ={0}", fechaEmp);
+        console.log("fecha empleado vacio = ", fechaEmp);
 
         if (idEmp ===null) {
 

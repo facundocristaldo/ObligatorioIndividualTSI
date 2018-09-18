@@ -64,10 +64,12 @@ namespace ApiServices.Controllers
             }
             catch (SecurityTokenValidationException e)
             {
+                Console.Out.Write(e.Message);
                 statusCode = HttpStatusCode.Unauthorized;
             }
             catch (Exception ex)
             {
+                Console.Out.Write(ex.Message);
                 statusCode = HttpStatusCode.InternalServerError;
             }
             return Task<HttpResponseMessage>.Factory.StartNew(() => new HttpResponseMessage(statusCode) { });
