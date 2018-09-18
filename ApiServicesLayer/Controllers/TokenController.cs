@@ -12,7 +12,7 @@ using System.Web.Http.Cors;
 
 namespace ApiServices.Controllers
 {
-    [EnableCors(origins: "http://localhost:52391", headers: "", methods: "*")]
+    [EnableCors(origins: "http://localhost:52390", headers: "", methods: "*")]
     public class TokenController : ApiController
     {
         [HttpGet]
